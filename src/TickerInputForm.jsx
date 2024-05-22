@@ -30,6 +30,7 @@ const TickerInputForm = ({ tickers, setTickers }) => {
           Add up to 3 stock tickers below to get a super accurate stock
           predictions report
         </FormLabel>
+
         <Box display="flex" alignItems="center">
           <Input
             id="ticker-input"
@@ -39,7 +40,7 @@ const TickerInputForm = ({ tickers, setTickers }) => {
           />
 
           <Button type="submit" ml={2}>
-            Generate
+            Add
           </Button>
         </Box>
       </FormControl>
