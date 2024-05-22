@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Box, Container } from '@chakra-ui/react'
 import Header from './Header'
 import TickerInputForm from './TickerInputForm'
+import TickersDisplay from './TickersDisplay'
 
 const App = () => {
   const [tickers, setTickers] = useState([])
@@ -14,7 +15,10 @@ const App = () => {
 
       <Box mt={7} width="100%">
         {!loading && !report && (
-          <TickerInputForm tickers={tickers} setTickers={setTickers} />
+          <>
+            <TickerInputForm tickers={tickers} setTickers={setTickers} />
+            <TickersDisplay tickers={tickers} setTickers={setTickers} />
+          </>
         )}
 
         {loading && <p>Loading...</p>}
