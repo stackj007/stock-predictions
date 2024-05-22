@@ -3,6 +3,7 @@ import { Box, Container } from '@chakra-ui/react'
 import Header from './Header'
 import TickerInputForm from './TickerInputForm'
 import TickersDisplay from './TickersDisplay'
+import LoadingPanel from './LoadingPanel'
 
 const App = () => {
   const [tickers, setTickers] = useState([])
@@ -21,7 +22,7 @@ const App = () => {
           </>
         )}
 
-        {loading && <p>Loading...</p>}
+        {loading && <LoadingPanel />}
         {report && <p>Report: {report}</p>}
       </Box>
     </Container>
