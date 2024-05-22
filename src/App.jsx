@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import { Box, Container } from '@chakra-ui/react'
-import React, { useState } from 'react'
+import Header from './Header'
+import TickerInputForm from './TickerInputForm'
 
 const App = () => {
   const [tickers, setTickers] = useState([])
@@ -8,9 +10,14 @@ const App = () => {
 
   return (
     <Container maxW="container.md" centerContent>
-      <Box mt={4} width="100%">
-        {!loading && !report && <p>Welcome to Dodgy Stock Predictions</p>}
-        {loading && <p>Loading ...</p>}
+      <Header />
+
+      <Box mt={7} width="100%">
+        {!loading && !report && (
+          <TickerInputForm tickers={tickers} setTickers={setTickers} />
+        )}
+
+        {loading && <p>Loading...</p>}
         {report && <p>Report: {report}</p>}
       </Box>
     </Container>
