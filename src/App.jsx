@@ -4,6 +4,7 @@ import Header from './Header'
 import TickerInputForm from './TickerInputForm'
 import TickersDisplay from './TickersDisplay'
 import LoadingPanel from './LoadingPanel'
+import OutputPanel from './OutputPanel'
 
 const App = () => {
   const [tickers, setTickers] = useState([])
@@ -23,7 +24,7 @@ const App = () => {
         )}
 
         {loading && <LoadingPanel />}
-        {report && <p>Report: {report}</p>}
+        {report && <OutputPanel report={report} />}
       </Box>
     </Container>
   )
